@@ -563,10 +563,11 @@ body.confetti::after {
 @media (min-width: 1200px) {
   body {
     overflow: hidden;
+    background-color: var(--void) !important;
   }
 
-  /* Cybernetic vertical layout divider at 75vw */
-  body::after {
+  /* Cybernetic vertical layout divider at 75vw when ready */
+  body.split-view::after {
     content: "";
     position: fixed;
     top: var(--topbar-h);
@@ -579,10 +580,11 @@ body.confetti::after {
     pointer-events: none;
   }
 
-  /* Clip WebGL canvas and neural network background to the right 25% of the screen */
-  .particle-universe-wrapper,
-  #neural-bg {
-    clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 75% 100%);
+  /* Reposition WebGL canvas and neural network background to the right 25% of the screen when ready */
+  body.split-view .particle-universe-wrapper,
+  body.split-view #neural-bg {
+    left: 75vw;
+    width: 25vw;
   }
 
   .site-track {

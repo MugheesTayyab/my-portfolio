@@ -16,7 +16,9 @@ class ParticleUniverse {
     this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const initW = this.container ? this.container.clientWidth : window.innerWidth;
+    const initH = this.container ? this.container.clientHeight : window.innerHeight;
+    this.camera = new THREE.PerspectiveCamera(75, initW / initH, 0.1, 1000);
     this.camera.position.z = 2;
 
     this.renderer = new THREE.WebGLRenderer({
@@ -25,7 +27,7 @@ class ParticleUniverse {
       alpha: true
     });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(initW, initH);
 
     this.isIntroMode = true;
     this.introDuration = 6500;
@@ -102,14 +104,24 @@ class ParticleUniverse {
     this.mouseWorld = new THREE.Vector3(0, 0, 0);
 
     window.addEventListener('resize', () => {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
+      const w = this.container ? this.container.clientWidth : window.innerWidth;
+      const h = this.container ? this.container.clientHeight : window.innerHeight;
+      this.camera.aspect = w / h;
       this.camera.updateProjectionMatrix();
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setSize(w, h);
     });
 
     window.addEventListener('pointermove', (e) => {
-      this.mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-      this.mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      if (this.container) {
+        const rect = this.container.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        this.mouse.x = (mouseX / rect.width) * 2 - 1;
+        this.mouse.y = -(mouseY / rect.height) * 2 + 1;
+      } else {
+        this.mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        this.mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      }
       
       this.raycaster.setFromCamera(this.mouse, this.camera);
       this.raycaster.ray.intersectPlane(this.plane, this.mouseWorld);
@@ -201,6 +213,15 @@ class ParticleUniverse {
     if (this.introOverlay) {
       this.introOverlay.classList.add('is-done');
     }
+    document.body.classList.add('split-view');
+
+    // Instantly recalculate canvas dimensions for the split-pane layout
+    const w = this.container ? this.container.clientWidth : window.innerWidth;
+    const h = this.container ? this.container.clientHeight : window.innerHeight;
+    this.camera.aspect = w / h;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(w, h);
+    window.dispatchEvent(new Event('resize'));
 
     setTimeout(() => {
       if (this.introOverlay) {
