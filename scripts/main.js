@@ -166,6 +166,27 @@
 
   function setupHorizontalScroll() {
     if (!track) return;
+    
+    // Toggle on-home class on body based on scroll position to manage layout divider display
+    const handleScroll = () => {
+      const isOnHome = track.scrollLeft < 50;
+      document.body.classList.toggle("on-home", isOnHome);
+      
+      const scrollHint = document.querySelector(".hero-scroll-hint");
+      if (scrollHint) {
+        if (isOnHome) {
+          scrollHint.style.opacity = "0.6";
+          scrollHint.style.visibility = "visible";
+        } else {
+          scrollHint.style.opacity = "0";
+          scrollHint.style.visibility = "hidden";
+        }
+      }
+    };
+    
+    track.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     window.addEventListener("wheel", (event) => {
       if (window.innerWidth < 1200) return;
       if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;

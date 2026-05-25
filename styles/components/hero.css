@@ -91,23 +91,35 @@
 }
 
 .hero-scroll-hint {
-  margin-top: 2rem;
-  font-family: "Space Mono", "JetBrains Mono", monospace;
-  font-size: clamp(0.72rem, 1.2vw, 0.85rem);
-  color: var(--text-dim);
-  opacity: 0.6;
-  letter-spacing: 0.05em;
-  animation: pulseHint 2.4s infinite ease-in-out;
-  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .hero-scroll-hint {
+    display: block;
+    position: absolute;
+    bottom: 2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    font-family: "Space Mono", "JetBrains Mono", monospace;
+    font-size: clamp(0.7rem, 1vw, 0.82rem);
+    color: var(--text-dim);
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    animation: pulseHint 2.4s infinite ease-in-out;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
 }
 
 @keyframes pulseHint {
   0%, 100% {
     opacity: 0.35;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
   50% {
     opacity: 0.75;
-    transform: translateY(3px);
+    transform: translate(-50%, 3px);
   }
 }
