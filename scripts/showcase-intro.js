@@ -94,6 +94,7 @@ class ShowcaseIntro {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.camera.position.z = 2;
+    this.camera.position.y = 0.4; // Shift particles to the top half of the screen
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
@@ -113,7 +114,7 @@ class ShowcaseIntro {
       const x = (e.clientX / window.innerWidth - 0.5) * 0.1;
       const y = (e.clientY / window.innerHeight - 0.5) * 0.1;
       this.camera.position.x += (x - this.camera.position.x) * 0.05;
-      this.camera.position.y += (-y - this.camera.position.y) * 0.05;
+      this.camera.position.y += (0.4 - y - this.camera.position.y) * 0.05; // Preserve the Y-offset during mouse sways
     });
   }
   
