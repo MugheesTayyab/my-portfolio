@@ -1,3 +1,32 @@
+/* Custom Cybernetic Scrollbar Theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void);
+  border-left: 1px solid rgba(0, 255, 156, 0.05);
+  border-top: 1px solid rgba(0, 255, 156, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 156, 0.28);
+  border: 1px solid rgba(0, 255, 156, 0.45);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 156, 0.65);
+  box-shadow: 0 0 12px rgba(0, 255, 156, 0.5);
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 156, 0.3) var(--void);
+}
+
 body {
   overflow-x: hidden;
   cursor: none;
