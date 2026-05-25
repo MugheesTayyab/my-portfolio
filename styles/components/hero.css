@@ -99,8 +99,7 @@
     display: block;
     position: absolute;
     bottom: 2.2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: clamp(2.5rem, 5vw, 5rem);
     z-index: 100;
     font-family: "Space Mono", "JetBrains Mono", monospace;
     font-size: clamp(0.7rem, 1vw, 0.82rem);
@@ -116,10 +115,10 @@
 @keyframes pulseHint {
   0%, 100% {
     opacity: 0.35;
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
   50% {
     opacity: 0.75;
-    transform: translate(-50%, 3px);
+    transform: translateY(3px);
   }
 }
