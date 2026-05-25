@@ -107,6 +107,14 @@ class ParticleUniverse {
       const w = this.container ? this.container.clientWidth : window.innerWidth;
       const h = this.container ? this.container.clientHeight : window.innerHeight;
       this.camera.aspect = w / h;
+      
+      // Move camera back to scale down particles inside the narrow desktop sidebar!
+      if (document.body.classList.contains('split-view') && window.innerWidth >= 1200) {
+        this.camera.position.z = 3.6;
+      } else {
+        this.camera.position.z = 2.0;
+      }
+      
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(w, h);
     });
@@ -205,6 +213,17 @@ class ParticleUniverse {
     if (newTargets) {
       this.targetPositions = newTargets;
     }
+
+    // Hide particles on Home section when not in intro loading mode
+    if (this.container && !this.isIntroMode) {
+      if (sectionId === 'home') {
+        this.container.style.opacity = '0';
+        this.container.style.pointerEvents = 'none';
+      } else {
+        this.container.style.opacity = '1';
+        this.container.style.pointerEvents = 'all';
+      }
+    }
   }
 
   exitIntroMode() {
@@ -219,6 +238,12 @@ class ParticleUniverse {
     const w = this.container ? this.container.clientWidth : window.innerWidth;
     const h = this.container ? this.container.clientHeight : window.innerHeight;
     this.camera.aspect = w / h;
+    
+    // Zoom out particles to fit the narrow desktop sidebar completely!
+    if (window.innerWidth >= 1200) {
+      this.camera.position.z = 3.6;
+    }
+    
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(w, h);
     window.dispatchEvent(new Event('resize'));
