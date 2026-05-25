@@ -16,15 +16,15 @@
 
 .project-list {
   display: grid;
-  gap: .45rem;
+  gap: .35rem;
 }
 
 .project-row {
   display: grid;
   grid-template-columns: minmax(180px, 1.2fr) minmax(180px, 1fr) auto;
-  gap: 2rem;
+  gap: 1.2rem;
   align-items: center;
-  padding: 1.2rem 1.5rem;
+  padding: 0.6rem 1rem;
   border: 1px solid rgba(232, 232, 240, .08);
   border-left: 4px solid var(--accent, var(--terminal));
   background: rgba(3, 3, 5, .54);

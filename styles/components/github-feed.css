@@ -78,20 +78,20 @@
 
 /* Momentum Widget */
 .github-momentum {
-  margin: 2rem 0;
-  padding: 1rem;
+  margin: 0.6rem 0;
+  padding: 0.5rem 0.8rem;
   background: rgba(0, 255, 156, 0.03);
   border: 1px solid rgba(0, 255, 156, 0.1);
   border-radius: 4px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-dim);
   max-width: 320px;
 }
 
 .github-momentum > span {
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
   color: var(--terminal);
   font-weight: 600;
   letter-spacing: 1px;
@@ -101,7 +101,7 @@
   display: flex;
   align-items: flex-end;
   gap: 4px;
-  height: 40px;
+  height: 28px;
 }
 
 .momentum-bar {
