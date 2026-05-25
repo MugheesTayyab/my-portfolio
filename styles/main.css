@@ -572,6 +572,42 @@ body.confetti::after {
     width: 25vw;
   }
 
+  /* Cybernetic vertical layout divider at 75vw when ready */
+  body.split-view::after {
+    content: "";
+    position: fixed;
+    top: var(--topbar-h);
+    bottom: 0;
+    left: 75vw;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(0, 255, 156, 0.25), transparent);
+    box-shadow: 0 0 10px rgba(0, 255, 156, 0.15);
+    z-index: 10;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hide vertical layout divider on home panel */
+  body.split-view.on-home::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Limit neural network background to the left 75% of the screen when split-view is active */
+  body.split-view #neural-bg {
+    left: 0;
+    width: 75vw;
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+
+  /* Span full screen on Section 0 (Home) */
+  body.split-view.on-home #neural-bg {
+    left: 0;
+    width: 100vw;
+  }
+
   .site-track {
     display: grid;
     grid-auto-flow: column;

@@ -168,6 +168,7 @@
     if (!track) return;
     
     // Toggle on-home class on body based on scroll position to manage layout divider display
+    let lastIsOnHome = true;
     const handleScroll = () => {
       const isOnHome = track.scrollLeft < 50;
       document.body.classList.toggle("on-home", isOnHome);
@@ -181,6 +182,14 @@
           scrollHint.style.opacity = "0";
           scrollHint.style.visibility = "hidden";
         }
+      }
+
+      // Dispatch a resize event to keep the neural network background canvas sharp and clean during dimension shifts
+      if (isOnHome !== lastIsOnHome) {
+        lastIsOnHome = isOnHome;
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 400); // matches the 0.4s CSS transition timing
       }
     };
     
