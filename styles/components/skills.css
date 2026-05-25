@@ -7,11 +7,17 @@
 
 .skill-map {
   position: relative;
-  min-height: 520px;
+  min-height: 420px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(26, 26, 46, .46);
   overflow: hidden;
+}
+
+@media (min-width: 1200px) and (max-height: 820px) {
+  .skill-map {
+    min-height: 330px !important;
+  }
 }
 
 .skill-lines {
