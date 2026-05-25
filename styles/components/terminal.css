@@ -98,19 +98,5 @@
 }
 
 .source-link {
-  position: absolute;
-  left: var(--panel-pad);
-  bottom: 1.2rem;
-  z-index: 3;
-  padding: .2rem 0;
-  background: transparent;
-  color: var(--text-dim);
-  font-family: "JetBrains Mono", monospace;
-  font-size: .78rem;
-  cursor: pointer;
-}
-
-.source-link:hover,
-.source-link:focus-visible {
-  color: var(--terminal);
+  display: none !important;
 }

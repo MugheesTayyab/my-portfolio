@@ -156,7 +156,22 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .panel-content {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+}
+
+@media (min-width: 1600px) {
+  .panel-content {
+    transform: scale(0.95);
+    transform-origin: center center;
+  }
 }
 
 /* Extra bottom spacing on mobile for the mobile nav bar */
