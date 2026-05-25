@@ -236,6 +236,7 @@ class ParticleUniverse {
       this.introOverlay.classList.add('is-done');
     }
     document.body.classList.add('split-view');
+    document.body.classList.add('on-home'); // Immediately hide vertical divider on initial load
 
     // Instantly recalculate canvas dimensions for the split-pane layout
     const w = this.container ? this.container.clientWidth : window.innerWidth;
