@@ -214,6 +214,9 @@ class ParticleUniverse {
       this.targetPositions = newTargets;
     }
 
+    // Toggle active section indicator on body to manage vertical separation line display
+    document.body.classList.toggle('on-home', sectionId === 'home');
+
     // Hide particles on Home section when not in intro loading mode
     if (this.container && !this.isIntroMode) {
       if (sectionId === 'home') {

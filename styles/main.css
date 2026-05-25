@@ -578,6 +578,13 @@ body.confetti::after {
     box-shadow: 0 0 10px rgba(0, 255, 156, 0.15);
     z-index: 10;
     pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  /* Hide vertical layout divider on home panel */
+  body.split-view.on-home::after {
+    opacity: 0;
+    visibility: hidden;
   }
 
   /* Reposition WebGL canvas and neural network background to the right 25% of the screen when ready */
