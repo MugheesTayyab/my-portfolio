@@ -93,7 +93,7 @@ class ShowcaseIntro {
     
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 2;
+    this.camera.position.z = 2.6;
     this.camera.position.y = -0.45; // Shift particles to the top half of the screen
 
     this.renderer = new THREE.WebGLRenderer({
