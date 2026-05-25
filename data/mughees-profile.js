@@ -3,104 +3,99 @@ window.MUGHEES_PROFILE = {
     name: "Muhammad Mughees Tayyab",
     assistantName: "MUGHEES.AI",
     location: "Islamabad, Pakistan",
-    role: "AI Engineer and FAST CS undergraduate",
-    education: "BS Computer Science, FAST NUCES Islamabad, 4th semester",
-    certification: "Generative AI Certification, PlanetBeyond, Jan 2026 to Jun 2026",
-    availability: "Open to internships, AI projects, collaborations, and technical communities"
+    role: "AI Engineer | Systems Developer | FAST CS",
+    education: "BS Computer Science, FAST NUCES Islamabad (4th Sem)",
+    certification: "Generative AI Certification, PlanetBeyond Islamabad",
+    availability: "Open to internships, AI/ML engineering, systems development, and research-style collaborations"
   },
   contact: {
     email: "muhammadmugheestayyab@gmail.com",
     phone: "0310-4579229",
-    linkedin: "LinkedIn profile URL pending"
+    linkedin: "https://linkedin.com/in/mugheestayyabkundi",
+    github: "https://github.com/MugheesTayyab"
   },
   suggestedQuestions: [
+    "Tell me about Aetheris research agent",
     "What's your strongest skill?",
-    "Are you open to internships?",
-    "Tell me about your 30M views",
-    "What did you build with Transformers?"
+    "What did you build with Transformers?",
+    "Are you open to internships?"
   ],
   fallback:
-    "I can answer about my projects, skills, education, achievements, or contact details. Try asking about my Transformer chatbot or 30M views.",
+    "I can answer about Aetheris, my custom Transformer chatbot, CityMind simulator, skills, education, and achievements. Try asking about Aetheris or my 30M views.",
   outOfScope:
-    "QUERY_OUT_OF_SCOPE - I only know about Mughees Tayyab.",
+    "QUERY_OUT_OF_SCOPE - I only know about Muhammad Mughees Tayyab.",
   faq: [
     {
       id: "strongest-skill",
-      keywords: ["strongest", "best", "main skill", "core skill", "specialty", "speciality"],
+      keywords: ["strongest", "best", "main skill", "core skill", "specialty", "speciality", "skills", "stack", "tech"],
       answer:
-        "My strongest area is building AI systems with a real algorithms foundation. Python, PyTorch, LangChain, RAG, and data structures are the stack I use most, but I also like going lower-level with C++ and x86 when the system demands it."
+        "My strongest area is building rigorous AI systems and low-level software. My core stack includes Python (LangGraph, LangChain, PyTorch), FastAPI, C++, and x86 MASM Assembly. I specialize in agentic workflows, custom Transformer architectures, and complex optimization algorithms."
     },
     {
-      id: "internships",
-      keywords: ["internship", "internships", "hire", "available", "availability", "work", "job", "open"],
+      id: "aetheris",
+      keywords: ["aetheris", "research", "agent", "deep research", "langgraph", "gemini", "tavily"],
       answer:
-        "Yes, I am open to internships, AI engineering work, research-style projects, and serious collaborations. The best fit is a role where I can build practical AI systems, work close to algorithms, and learn from strong engineers."
-    },
-    {
-      id: "views",
-      keywords: ["30m", "30 million", "views", "instagram", "growth", "algorithm", "content"],
-      answer:
-        "I reached 30M+ views in 20 days through algorithmic content strategy, not paid boosts. I treated content like an optimization problem: retention, timing, iteration speed, and feedback loops."
+        "Aetheris is an AI Deep Research Assistant. I engineered a LangGraph-powered multi-agent workflow featuring clarity, research, validation, and synthesis agents. It integrates Tavily Search and Gemini API to retrieve web data, score confidence (0-10), and autonomously retry low-confidence paths. It also supports graph checkpointing for human-in-the-loop query clarification."
     },
     {
       id: "transformer-chatbot",
       keywords: ["transformer", "chatbot", "attention", "rag", "langchain", "faiss", "pytorch"],
       answer:
-        "I built a character-level Transformer chatbot from scratch in PyTorch, following the Attention Is All You Need architecture instead of relying on pretrained weights. On top of that, I added a RAG pipeline with LangChain and FAISS to ground responses and reduce hallucination."
+        "I built a character-level Transformer chatbot from scratch in PyTorch, following the Attention Is All You Need architecture instead of relying on pretrained weights. I then integrated a RAG pipeline with LangChain and FAISS for factual grounding and persona-driven dialogue optimization."
     },
     {
-      id: "temporal-relations",
-      keywords: ["temporal", "relations", "networkx", "graph", "time", "events", "constraints"],
+      id: "citymind",
+      keywords: ["citymind", "smart city", "simulator", "a*", "genetic", "annealing", "csp"],
       answer:
-        "My Temporal Relations project models event order and constraints as graph state. I use NetworkX-style graph thinking with Python tooling so relationships can be inspected, tested, and reasoned about instead of staying fuzzy."
+        "CityMind is a 144-node smart city emergency response simulator. I integrated CSP layout validation, Genetic Algorithm road optimization, Simulated Annealing ambulance placement, dynamic A* rerouting, and a Random Forest crime-risk classification into a shared NetworkX graph."
     },
     {
-      id: "cpp-sfml",
-      keywords: ["c++", "cpp", "sfml", "game", "games", "game ai", "oop"],
+      id: "economic-network",
+      keywords: ["economic", "network", "cpi", "pakistan", "networkx", "hasse"],
       answer:
-        "I have built C++ SFML game systems with real-time loops, collision, state machines, and game AI behavior. It is where my algorithms and systems programming practice meet something visual and interactive."
+        "I modeled Pakistan's economic connectivity using a NetworkX pipeline to compute cosine similarity, adjacency matrices, and centrality metrics on multi-year Consumer Price Index (CPI) data, visualizing structural shifts with Hasse diagrams."
     },
     {
-      id: "assembly",
-      keywords: ["assembly", "x86", "masm", "mario", "physics", "register"],
+      id: "games-systems",
+      keywords: ["game", "games", "c++", "sfml", "assembly", "mario", "masm", "x86"],
       answer:
-        "The x86 Super Mario project is a low-level experiment in motion, collision, and rendering. Working in assembly forces me to understand control flow, registers, memory, and physics without modern engine abstractions."
+        "I engineered three C++/SFML games (Space Wars, Buzz Bomber, Xonix) implementing dynamic AI, pathfinding, and OOP design. Additionally, I built an x86 Assembly Super Mario platformer in MASM with sprite rendering and manual physics loops close to the metal."
+    },
+    {
+      id: "internships",
+      keywords: ["internship", "internships", "hire", "available", "availability", "work", "job", "open"],
+      answer:
+        "Yes, I am actively seeking internships, research-style AI projects, and systems development roles. I am excited to work on agentic GenAI, complex algorithm design, or core backend/low-level systems."
+    },
+    {
+      id: "views",
+      keywords: ["30m", "30 million", "views", "instagram", "growth", "algorithm", "content"],
+      answer:
+        "I generated 30M+ organic views in 20 days through algorithmic content strategy, not paid boosts. I treated content creation as an optimization problem, testing retention loops, timing, and posting cadence."
     },
     {
       id: "education",
       keywords: ["education", "fast", "nuces", "university", "semester", "degree", "college"],
       answer:
-        "I am studying BS Computer Science at FAST NUCES Islamabad and I am currently in my 4th semester. My focus areas are AI, algorithms, data structures, and systems programming."
+        "I am a CS Undergraduate at FAST NUCES Islamabad, currently in my 4th Semester (June 2024 - Expected May 2028). I'm also GenAI Certified from PlanetBeyond Islamabad (Jan 2026 - Jun 2026)."
     },
     {
-      id: "certification",
-      keywords: ["certificate", "certification", "certified", "planetbeyond", "genai", "generative ai"],
+      id: "achievements",
+      keywords: ["achievements", "awards", "hackathon", "atomcamp", "runner-up", "lms"],
       answer:
-        "I am doing a Generative AI Certification with PlanetBeyond in Islamabad, scheduled from Jan 2026 to Jun 2026. The focus is LLMs, RAG, fine-tuning, and deployment."
-    },
-    {
-      id: "skills",
-      keywords: ["skills", "stack", "tech", "technology", "tools", "languages"],
-      answer:
-        "My stack includes Python, PyTorch, LangChain, FAISS, NetworkX, NumPy, C++, SFML, x86 Assembly, and DSA. I try to keep the stack practical: use AI tools where they help, and understand the underlying systems when they matter."
-    },
-    {
-      id: "contact",
-      keywords: ["contact", "email", "phone", "linkedin", "reach", "message"],
-      answer:
-        "You can reach me at muhammadmugheestayyab@gmail.com or call 0310-4579229. My LinkedIn exact URL is still pending in this build, but the portfolio includes a LinkedIn search link for Mughees Tayyab."
+        "My key achievements include reaching 30M+ Instagram views in 20 days and securing Runner-Up in the Atomcamp Hackathon, where I co-developed an adaptive LMS product recognized among top submissions."
     },
     {
       id: "community",
-      keywords: ["community", "pehli", "kiran", "fcss", "nascon", "teaching", "leadership"],
+      keywords: ["community", "pehli", "kiran", "fcss", "nascon", "teaching", "leadership", "assistant"],
       answer:
-        "I am involved in community and campus work through Pehli Kiran School, FCSS, and NASCON-related participation. I care about teaching, collaboration, and building around people, not only around code."
+        "I served as a Computer Lab Assistant at Pehli Kiran Schools, teaching AI fundamentals and lesson plans to underprivileged children. I am also active on campus with FCSS (Fast CS Society) and NASCON."
     },
     {
-      id: "about",
-      keywords: ["who", "about", "mughees", "profile", "summary", "intro"],
+      id: "contact",
+      keywords: ["contact", "email", "phone", "linkedin", "github", "reach", "message"],
       answer:
-        "I am Muhammad Mughees Tayyab, an AI and algorithms-focused CS student at FAST NUCES Islamabad. I build across AI systems, graph logic, C++ games, assembly experiments, and growth analytics."
+        "You can email me at muhammadmugheestayyab@gmail.com, call 0310-4579229, or connect via LinkedIn: https://linkedin.com/in/mugheestayyabkundi and GitHub: https://github.com/MugheesTayyab."
     }
   ]
 };

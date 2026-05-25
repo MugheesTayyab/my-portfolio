@@ -8,48 +8,59 @@
 
   const projects = [
     {
+      slug: "aetheris",
+      title: "Aetheris — AI Deep Research Assistant",
+      tags: "AI | LangGraph | Gemini",
+      bars: "█████████",
+      accent: "#00ffff",
+      desc: "Engineered a LangGraph-powered multi-agent research workflow with dedicated clarity, research, validation, and synthesis agents. Retries low-confidence paths autonomously.",
+      tech: "LangGraph, Google Gemini API, Tavily Search, Streamlit",
+      impact: "Retrieves live web data and autonomously scores research confidence (0–10)",
+      highlight: "Designed graph checkpointing to support dynamic Human-in-the-Loop query clarification"
+    },
+    {
       slug: "transformer-chatbot",
-      title: "Character-Level Transformer Chatbot",
-      tags: "AI | Python | LangChain",
+      title: "Character-Level Transformer Chatbot & RAG System",
+      tags: "AI | PyTorch | RAG",
       bars: "████████",
       accent: "#9d00ff",
-      desc: "Built from scratch from the Attention Is All You Need paper, then extended with a RAG pipeline through LangChain and FAISS.",
-      tech: "Python, PyTorch, LangChain, FAISS",
-      impact: "Hallucinations minimized by 60%+ in constrained retrieval runs",
+      desc: "Built a character-level Transformer model from scratch based on the Attention Is All You Need paper, integrating a RAG pipeline via LangChain for real-time factual grounding.",
+      tech: "Python, PyTorch, LangChain, custom Transformer, RAG",
+      impact: "Persona-driven dialogue optimization and strict character consistency",
       highlight: "No pre-built model shortcut - core transformer logic implemented directly"
     },
     {
-      slug: "temporal-relations",
-      title: "Temporal Relations Engine",
-      tags: "Math | NetworkX | PyTorch",
+      slug: "citymind",
+      title: "CityMind — Smart City Simulator",
+      tags: "AI | Optimization | CSP",
+      bars: "████████░",
+      accent: "#00ff9c",
+      desc: "Engineered a 144-node emergency response simulator integrating Genetic Algorithms, Simulated Annealing, CSP layout validation, and dynamic A* rerouting.",
+      tech: "Python, A*, Genetic Algorithm, Simulated Annealing, Random Forest, CSP, NetworkX",
+      impact: "Embedded Random Forest crime-risk classification to influence real-time dispatch and route costs",
+      highlight: "Combines multiple search, optimization, and ML techniques into a shared graph model"
+    },
+    {
+      slug: "economic-network",
+      title: "Economic Network Analysis (Pakistan CPI)",
+      tags: "Data | NetworkX | Graph",
       bars: "███████░",
       accent: "#ffb830",
-      desc: "A graph-first approach to modeling time-aware relations, constraints, and inference paths.",
-      tech: "Python, NetworkX, PyTorch, NumPy",
-      impact: "Turns fuzzy event order into inspectable graph state",
-      highlight: "Math-heavy modeling with visual debugging"
+      desc: "Modeled Pakistan's economic connectivity by computing cosine similarity, adjacency matrices, and four centrality metrics on multi-year CPI data.",
+      tech: "Python, NetworkX, NumPy, Hasse Diagrams",
+      impact: "Applied entropy-based weighting and Hasse diagrams to identify high-influence economic hubs",
+      highlight: "Converts complex, fuzzy chronological constraints into structured, mathematically debuggable graph networks"
     },
     {
-      slug: "cpp-sfml-games",
-      title: "C++ SFML Game Systems",
-      tags: "C++ | SFML | Game AI",
-      bars: "█████░░░",
-      accent: "#00ff9c",
-      desc: "Interactive game loops, state machines, collision systems, and AI behaviors built in C++.",
-      tech: "C++, SFML, OOP, DSA",
-      impact: "Practical systems programming through real-time constraints",
-      highlight: "Gameplay code shaped by algorithms and memory discipline"
-    },
-    {
-      slug: "x86-super-mario",
-      title: "x86 Super Mario Physics",
-      tags: "Assembly | MASM | Physics",
-      bars: "████░░░░",
+      slug: "game-systems",
+      title: "C++/SFML & MASM x86 Mario Systems",
+      tags: "C++ | x86 ASM | Systems",
+      bars: "██████░░",
       accent: "#ff2d55",
-      desc: "Mario-inspired motion, collision, and rendering experiments implemented close to the metal.",
-      tech: "x86 Assembly, MASM, Irvine, low-level graphics",
-      impact: "Shows understanding of CPU-level control flow and constraints",
-      highlight: "Game physics without a modern engine safety net"
+      desc: "Engineered 2D games (Space Wars, Buzz Bomber, Xonix) in C++/SFML, and an x86 Assembly Super Mario platformer written in pure MASM close to the metal.",
+      tech: "C++, SFML, x86 Assembly, MASM, sprite rendering, manual physics loops",
+      impact: "Low-level memory handling, manual sprite rendering, physics loops, and dynamic enemy AI",
+      highlight: "Register-level CPU-operation control without modern engine safety nets"
     },
     {
       slug: "instagram-algorithm",
@@ -65,17 +76,17 @@
   ];
 
   const skills = [
-    ["Transformers", 450, 80, 112, "#9d00ff", "88% | attention layers, token flow"],
+    ["Transformers", 450, 80, 112, "#9d00ff", "88% | attention layers, token flow from scratch"],
     ["LangChain", 260, 185, 92, "#9d00ff", "86% | RAG chains and retrieval"],
-    ["Python", 450, 185, 118, "#00ff9c", "94% | modeling, scripting, systems glue"],
+    ["Python", 450, 185, 118, "#00ff9c", "94% | modeling, AI, systems glue"],
     ["PyTorch", 640, 185, 100, "#9d00ff", "84% | neural nets and training loops"],
-    ["RAG Systems", 170, 300, 86, "#9d00ff", "86% | FAISS and grounded response design"],
-    ["Algorithms", 450, 300, 112, "#ffb830", "91% | DSA, graph logic, optimization"],
-    ["NumPy", 725, 300, 82, "#ffb830", "80% | numerical computation"],
-    ["C++", 250, 300, 90, "#00ff9c", "82% | OOP, memory, game loops"],
-    ["DSA", 650, 300, 86, "#ffb830", "90% | problem solving and structures"],
+    ["LangGraph", 170, 300, 94, "#9d00ff", "88% | multi-agent workflows, checkpointing"],
+    ["Algorithms", 450, 300, 112, "#ffb830", "91% | CSP, genetic, search optimization"],
+    ["FastAPI", 725, 300, 86, "#00c8ff", "85% | robust backend API services"],
+    ["C++ / SFML", 250, 300, 90, "#00ff9c", "82% | OOP, memory, game loops"],
+    ["RAG Systems", 650, 300, 92, "#9d00ff", "88% | factual grounding and FAISS"],
     ["x86 Assembly", 450, 410, 86, "#00ff9c", "74% | registers, MASM, control flow"],
-    ["SFML", 250, 410, 76, "#00ff9c", "78% | rendering and interaction"]
+    ["Next.js / Docker", 250, 410, 82, "#00c8ff", "80% | containerization & modern frontend"]
   ];
 
   function renderProjects() {
@@ -128,7 +139,7 @@
     });
     document.getElementById("modal-close")?.addEventListener("click", () => modal?.close());
     document.getElementById("modal-code")?.addEventListener("click", () => {
-      document.getElementById("modal-code").textContent = "repo link pending";
+      window.open("https://github.com/MugheesTayyab/my-portfolio", "_blank");
     });
   }
 
