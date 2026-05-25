@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Muhammad Mughees Tayyab - AI, algorithms, and systems engineering portfolio.">
+  <title>Mughees Tayyab | Neural Terminal Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fragment+Mono:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/typography.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/components/terminal.css">
+  <link rel="stylesheet" href="styles/components/hero.css">
+  <link rel="stylesheet" href="styles/components/projects.css">
+  <link rel="stylesheet" href="styles/components/skills.css">
+  <link rel="stylesheet" href="styles/components/mughees-ai.css">
+  <link rel="stylesheet" href="styles/components/particle-universe.css">
+  <link rel="stylesheet" href="styles/components/game-mode.css">
+  <link rel="stylesheet" href="styles/components/github-feed.css">
+  <link rel="stylesheet" href="styles/components/magnetic-hover.css">
+  <link rel="stylesheet" href="styles/showcase-intro.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.1/build/three.module.js"
+      }
+    }
+    </script>
+</head>
+
+<body>
+  <div class="particle-universe-wrapper" id="particle-universe">
+    <canvas id="particle-canvas"></canvas>
+  </div>
+  <canvas id="neural-bg" aria-hidden="true" hidden></canvas>
+  <div class="scanlines" aria-hidden="true" hidden></div>
+  <div class="glitch-flash" id="glitch-flash" aria-hidden="true" hidden></div>
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true" hidden>█</div>
+  <div class="matrix-rain" id="matrix-rain" aria-hidden="true" hidden></div>
+
+  <header class="topbar" hidden>
+    <a class="brand" href="#home" data-magnetic="light" aria-label="Go to home">MUGHEES_OS</a>
+    <nav aria-label="Primary navigation">
+      <a href="#about" data-magnetic="light">about</a>
+      <a href="#projects" data-magnetic="light">projects</a>
+      <a href="#skills" data-magnetic="light">skills</a>
+      <a href="#contact" data-magnetic="light">contact</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="joystick-btn" id="game-mode-toggle" aria-label="Toggle Game Mode" title="GAME MODE">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="6" y1="12" x2="10" y2="12"></line>
+          <line x1="8" y1="10" x2="8" y2="14"></line>
+          <line x1="15" y1="13" x2="15.01" y2="13"></line>
+          <line x1="18" y1="11" x2="18.01" y2="11"></line>
+          <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+        </svg>
+      </button>
+      <div class="uptime" id="uptime">UPTIME: 00:00:00</div>
+    </div>
+  </header>
+
+  <div class="github-ticker" aria-live="off" hidden>
+    <div class="github-ticker-label">LIVE_ACTIVITY</div>
+    <div class="github-ticker-content" id="github-ticker-content">
+      <div class="github-event">Initializing secure GitHub uplink...</div>
+    </div>
+  </div>
+
+  <main class="site-track" id="site-track" hidden>
+    <section class="panel hero-panel" id="home" data-section>
+      <div class="panel-content">
+        <img class="attention-map" src="assets/attention-map.svg" alt="" aria-hidden="true">
+        <div class="hero-terminal terminal-window">
+          <div class="terminal-title">
+            <span class="traffic"><i></i><i></i><i></i></span>
+            <span>MUGHEES_OS v2026.04</span>
+          </div>
+          <div class="hero-content">
+            <p class="system-line">&gt; root@neural-terminal:~/identity</p>
+            <pre class="ascii-name" aria-label="MUGHEES">███╗   ███╗██╗   ██╗ ██████╗ ██╗  ██╗███████╗███████╗███████╗
+    ████╗ ████║██║   ██║██╔════╝ ██║  ██║██╔════╝██╔════╝██╔════╝
+    ██╔████╔██║██║   ██║██║  ███╗███████║█████╗  █████╗  ███████╗
+    ██║╚██╔╝██║██║   ██║██║   ██║██╔══██║██╔══╝  ██╔══╝  ╚════██║
+    ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██║███████╗███████╗███████║
+    ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝</pre>
+            <h1 class="sr-only">Muhammad Mughees Tayyab</h1>
+            <p class="hero-subtitle" data-type-text="AI Engineer | FAST CS | GenAI Certified | Algorithms First"></p>
+            <div class="hero-actions">
+              <a class="command-button" data-magnetic="strong" href="#about"><span>██</span> explore systems</a>
+              <a class="command-button ghost" data-magnetic="strong" href="#projects"><span>&gt;&gt;</span> view
+                projects</a>
+            </div>
+            <div class="hero-stat">
+              <strong>30M+</strong>
+              <span>views reached</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="particles-three.js + hero.css">&gt;
+        view_source()</button>
+    </section>
+    <section class="panel about-panel" id="about" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">01 / identity_matrix</div>
+        <div class="about-grid">
+          <div class="terminal-window portrait-window" data-magnetic="medium">
+            <div class="terminal-title">
+              <span class="traffic"><i></i><i></i><i></i></span>
+              <span>PID: MMT_2026</span>
+            </div>
+            <div class="portrait-stage">
+              <img src="assets/portrait-signal.svg" alt="Abstract signal portrait for Mughees Tayyab">
+              <div class="ascii-face" aria-hidden="true">01001101
+                10101010
+                AI_ENGINE
+                FAST_CS4
+                11001001</div>
+            </div>
+            <dl class="data-lines">
+              <div>
+                <dt>LOCATION</dt>
+                <dd>Islamabad, PK</dd>
+              </div>
+              <div>
+                <dt>STATUS</dt>
+                <dd>Active</dd>
+              </div>
+              <div>
+                <dt>BUILD</dt>
+                <dd>FAST-CS-4th</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="identity-copy">
+            <h2>Classified Profile<span class="cursor-blink"></span></h2>
+            <p class="typed-on-view">Muhammad Mughees Tayyab builds at the intersection of AI systems, algorithms, and
+              low-level engineering. His work spans transformer chatbots, temporal-relation modeling, C++ game logic,
+              x86
+              assembly physics, and growth analytics that reached 30M+ views in 20 days.</p>
+            <p>He is a FAST NUCES Islamabad CS undergraduate focused on practical AI, rigorous data structures, systems
+              thinking, and production-minded experimentation.</p>
+            <div class="load-meter" aria-label="Skill load 87 percent">
+              <span>SKILL_LOAD</span>
+              <b><i style="width:87%"></i></b>
+              <strong>87%</strong>
+            </div>
+            <div class="badge">GenAI CERTIFIED - PlanetBeyond 2026</div>
+            <div class="github-momentum" id="github-momentum">
+              <span>GITHUB_MOMENTUM</span>
+              <div class="momentum-bars">
+                <!-- Bars will be injected by JS -->
+              </div>
+            </div>
+            <a class="ssh-link" href="https://www.linkedin.com/search/results/all/?keywords=Mughees%20Tayyab"
+              target="_blank" rel="noreferrer">&gt; ssh mughees@linkedin</a>
+          </div>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="typewriter.js + terminal.css">&gt;
+        view_source()</button>
+    </section>
+
+    <section class="panel projects-panel" id="projects" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">02 / system_files</div>
+        <div class="terminal-window directory-window">
+          <div class="terminal-title">
+            <span class="traffic"><i></i><i></i><i></i></span>
+            <span>/projects</span>
+          </div>
+          <div class="directory-body">
+            <h2>Project Directory<span class="cursor-blink"></span></h2>
+            <p class="prompt">/projects $ ls -la</p>
+            <div class="project-list" id="project-list" aria-label="Project files"></div>
+          </div>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="glitch.js + projects.css">&gt;
+        view_source()</button>
+    </section>
+
+    <section class="panel skills-panel" id="skills" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">03 / neural_map</div>
+        <h2>Skill Graph<span class="cursor-blink"></span></h2>
+        <div class="skill-layout">
+          <div class="skill-map" id="skill-map" aria-label="Interactive skill map">
+            <svg class="skill-lines" viewBox="0 0 900 520" aria-hidden="true">
+              <path d="M450 80 L260 185 L450 185 L640 185 L450 300 L250 300 L450 410" />
+              <path d="M260 185 L170 300 M640 185 L725 300 M450 185 L450 300 M250 300 L450 300 L650 300" />
+            </svg>
+          </div>
+          <pre class="skills-code"><code>export const skills = [
+  { core: "Python", level: 94 },
+  { core: "Transformers", level: 88 },
+  { core: "Algorithms", level: 91 },
+  { core: "C++ / SFML", level: 82 },
+  { core: "x86 Assembly", level: 74 },
+  { core: "RAG Systems", level: 86 }
+];</code></pre>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="neural-bg.js + skills.css">&gt;
+        view_source()</button>
+    </section>
+
+    <section class="panel metrics-panel" id="achievements" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">04 / metrics_dashboard</div>
+        <h2>Runtime Metrics<span class="cursor-blink"></span></h2>
+        <div class="metrics-grid">
+          <article class="metric-card" data-magnetic="medium">
+            <span>VIEWS REACHED</span>
+            <strong data-count="30" data-suffix="M+">0</strong>
+            <p>Instagram algorithm optimization</p>
+          </article>
+          <article class="metric-card" data-magnetic="medium">
+            <span>DAYS TO 30M</span>
+            <strong data-count="20">0</strong>
+            <p>Fastest campaign run in cohort</p>
+          </article>
+          <article class="metric-card" data-magnetic="medium">
+            <span>AI CERT YEAR</span>
+            <strong data-count="2026">0</strong>
+            <p>PlanetBeyond Islamabad</p>
+          </article>
+          <article class="metric-card wide" data-magnetic="medium">
+            <span>ALGORITHM REACH OVER TIME</span>
+            <div class="bar-chart" aria-label="Animated bar chart">
+              <i style="--h:16%"></i><i style="--h:24%"></i><i style="--h:38%"></i><i style="--h:54%"></i><i
+                style="--h:72%"></i><i style="--h:88%"></i><i style="--h:98%"></i>
+            </div>
+            <p>"30M views through pure algorithmic optimization - no ads, no boosts. Just math."</p>
+          </article>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="countup.js + animations.css">&gt;
+        view_source()</button>
+    </section>
+
+    <section class="panel education-panel" id="education" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">05 / system_log</div>
+        <h2>Education Log<span class="cursor-blink"></span></h2>
+        <div class="log-stack">
+          <details open>
+            <summary>commit a3f9d2e (HEAD -&gt; present)</summary>
+            <p>feat: Enrolled in CS Undergraduate - FAST NUCES Islamabad</p>
+            <ul>
+              <li>Major: Computer Science</li>
+              <li>Focus: AI, algorithms, systems programming</li>
+              <li>Status: 4th Semester (Active)</li>
+            </ul>
+          </details>
+          <details>
+            <summary>commit 7c1b889 - Jan 2026 to Jun 2026</summary>
+            <p>cert: Generative AI Certification - PlanetBeyond</p>
+            <ul>
+              <li>Modules: LLMs, RAG, fine-tuning, deployment</li>
+              <li>Location: Islamabad, Pakistan</li>
+            </ul>
+          </details>
+          <details>
+            <summary>commit 001f4a0 - 2018 to 2024</summary>
+            <p>init: Matric and Intermediate - Abdul Razzaq Fazaia College</p>
+            <ul>
+              <li>Location: Mianwali, Pakistan</li>
+              <li>Foundation for FAST CS admission</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="HTML details + terminal styles">&gt;
+        view_source()</button>
+    </section>
+
+    <section class="panel community-panel" id="community" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">06 / open_ports</div>
+        <h2>Active Connections<span class="cursor-blink"></span></h2>
+        <div class="connection-list">
+          <article>
+            <span>PORT: EDUCATION</span>
+            <h3>Pehli Kiran School</h3>
+            <p>Teaching AI to local students. Structured lesson plans and community engagement.</p>
+            <b>Status: ACTIVE ██████████</b>
+          </article>
+          <article>
+            <span>PORT: LEADERSHIP</span>
+            <h3>FCSS - Fast CS Society</h3>
+            <p>Event coordination, peer collaboration, and campus-level CS participation.</p>
+            <b>Status: ACTIVE ███████░░░</b>
+          </article>
+          <article>
+            <span>PORT: EVENTS</span>
+            <h3>NASCON</h3>
+            <p>National student convention participation and technical community work.</p>
+            <b>Status: ACTIVE ██████░░░░</b>
+          </article>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button" data-source="section markup + terminal.css">&gt;
+        view_source()</button>
+    </section>
+
+    <section class="panel contact-panel" id="contact" data-section>
+      <div class="panel-content">
+        <div class="section-kicker">07 / open_channel</div>
+        <div class="terminal-window contact-window">
+          <div class="terminal-title">
+            <span class="traffic"><i></i><i></i><i></i></span>
+            <span>establish_connection.sh</span>
+          </div>
+          <form id="contact-form" class="contact-form">
+            <p>&gt; ping mughees@muhammadmugheestayyab.com</p>
+            <p class="pong">PONG - 2ms response time</p>
+            <label>SUBJECT <input name="subject" autocomplete="off"
+                placeholder="collaboration / internship / build"></label>
+            <label>BODY <textarea name="body" rows="5" placeholder="Type the transmission here..."></textarea></label>
+            <button class="command-button" data-magnetic="strong" type="submit"><span>&gt;&gt;</span> transmit
+              message</button>
+            <output id="contact-output" aria-live="polite"></output>
+            <div class="direct-lines">
+              <span>OR CONNECT DIRECTLY:</span>
+              <a href="mailto:muhammadmugheestayyab@gmail.com">muhammadmugheestayyab@gmail.com</a>
+              <a href="tel:+923104579229">0310-4579229</a>
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Mughees%20Tayyab" target="_blank"
+                rel="noreferrer">linkedin: Mughees Tayyab</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button class="source-link" data-magnetic="light" type="button"
+        data-source="cursor.js + contact form controller">&gt;
+        view_source()</button>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation" hidden>
+    <a href="#home">home</a>
+    <a href="#projects">projects</a>
+    <a href="#skills">skills</a>
+    <a href="#contact">contact</a>
+  </nav>
+
+  <dialog class="project-modal" id="project-modal" aria-labelledby="modal-title" hidden>
+    <div class="terminal-window">
+      <div class="terminal-title">
+        <span class="traffic"><i></i><i></i><i></i></span>
+        <span id="modal-path">/projects</span>
+      </div>
+      <div class="modal-body">
+        <p>&gt; cat README.md</p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <dl>
+          <div>
+            <dt>TECH STACK</dt>
+            <dd id="modal-tech"></dd>
+          </div>
+          <div>
+            <dt>IMPACT</dt>
+            <dd id="modal-impact"></dd>
+          </div>
+          <div>
+            <dt>HIGHLIGHT</dt>
+            <dd id="modal-highlight"></dd>
+          </div>
+        </dl>
+        <div class="modal-actions">
+          <button class="command-button" type="button" id="modal-code"><span>██</span> view code</button>
+          <button class="command-button ghost" type="button" id="modal-close"><span>x</span> close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <section class="ai-agent" id="mughees-ai" aria-label="MUGHEES.AI assistant" hidden>
+    <div class="ai-panel" id="mughees-ai-panel" role="region" aria-label="MUGHEES.AI chat panel" hidden>
+      <header class="ai-header">
+        <div>
+          <div class="ai-title"><span class="status-dot"></span> MUGHEES.AI</div>
+          <span class="ai-meta">v1.0 [online] local knowledge base</span>
+        </div>
+        <button class="ai-close" type="button" aria-label="Close MUGHEES.AI">x</button>
+      </header>
+      <div class="ai-messages" role="log" aria-live="polite" aria-relevant="additions">
+        <div class="ai-message assistant">
+          <span class="ai-prompt">&gt;</span>
+          <p>Hello. I am an instance of Mughees. Ask me anything.</p>
+        </div>
+      </div>
+      <div class="ai-chips" aria-label="Suggested questions"></div>
+      <form class="ai-form">
+        <label for="ai-question">QUESTION</label>
+        <div class="ai-input-row">
+          <input id="ai-question" name="question" type="text" autocomplete="off"
+            placeholder="Ask about projects, skills, internships...">
+          <button class="ai-send" type="submit">send</button>
+        </div>
+        <output class="ai-limit" aria-live="polite"></output>
+      </form>
+    </div>
+    <button class="ai-launcher" type="button" aria-expanded="false" aria-controls="mughees-ai-panel">
+      <span class="status-dot"></span>
+      MUGHEES.AI
+    </button>
+  </section>
+
+  <div class="game-overlay" id="game-overlay" aria-hidden="true" hidden>
+    <header class="game-header">
+      <span>[GAME MODE ACTIVATED]</span>
+      <button class="game-close" type="button">CLOSE [ESC]</button>
+    </header>
+    <div class="game-container">
+      <canvas id="game-canvas"></canvas>
+      <div class="game-ui-overlay">
+        <div class="collectible-stat">DATA_SHARDS: <span id="collect-count">0</span>/5</div>
+      </div>
+      <div class="game-controls-hint">WASD / ARROWS TO MOVE | SPACE TO INTERACT</div>
+    </div>
+  </div>
+
+  <div class="compute-toast" id="compute-toast" hidden>&gt; computing...</div>
+
+  <script src="scripts/neural-bg.js" defer></script>
+  <script src="scripts/particles-three.js" type="module"></script>
+  <script src="scripts/showcase-intro.js" type="module"></script>
+  <script src="scripts/game-mode.js" defer></script>
+  <script src="scripts/github-feed.js" defer></script>
+  <script src="scripts/cursor.js" defer></script>
+  <script src="scripts/typewriter.js" defer></script>
+  <script src="scripts/countup.js" defer></script>
+  <script src="scripts/glitch.js" defer></script>
+  <script src="data/mughees-profile.js" defer></script>
+  <script src="scripts/mughees-ai.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/magnetic-hover.js" defer></script>
+</body>
+
+</html>

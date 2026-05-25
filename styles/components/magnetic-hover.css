@@ -1,0 +1,29 @@
+[data-magnetic] {
+  transform: translate3d(var(--magnet-x, 0), var(--magnet-y, 0), 0)
+    rotateX(var(--tilt-x, 0))
+    rotateY(var(--tilt-y, 0));
+  transition: transform 160ms ease;
+  will-change: transform;
+}
+
+[data-magnetic="strong"] {
+  --magnetic-radius: 140;
+  --magnetic-max: 20;
+}
+
+[data-magnetic="medium"] {
+  --magnetic-radius: 120;
+  --magnetic-max: 12;
+}
+
+[data-magnetic="light"] {
+  --magnetic-radius: 80;
+  --magnetic-max: 5;
+}
+
+@media (max-width: 899px), (prefers-reduced-motion: reduce) {
+  [data-magnetic] {
+    transform: none !important;
+    transition: none !important;
+  }
+}

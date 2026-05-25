@@ -1,0 +1,61 @@
+@keyframes cursorPulse {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes gridPulse {
+  50% {
+    opacity: .42;
+  }
+}
+
+@keyframes glitchShift {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: 2px 0 var(--error-red), -2px 0 var(--cyan);
+  }
+  33% {
+    transform: translate(2px, -1px);
+    text-shadow: -3px 0 var(--terminal), 2px 0 var(--neon-purple);
+  }
+  66% {
+    transform: translate(-2px, 1px);
+    text-shadow: 3px 0 var(--amber), -2px 0 var(--error-red);
+  }
+}
+
+@keyframes barRise {
+  from {
+    height: 8%;
+  }
+  to {
+    height: var(--h);
+  }
+}
+
+@keyframes toastIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  15%, 80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

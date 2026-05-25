@@ -1,0 +1,112 @@
+.directory-window {
+  width: min(1080px, 100%);
+}
+
+.directory-body,
+.modal-body {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.prompt {
+  margin: 0 0 1rem;
+  color: var(--terminal);
+}
+
+.project-list {
+  display: grid;
+  gap: .45rem;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.2fr) minmax(180px, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(232, 232, 240, .08);
+  border-left: 4px solid var(--accent, var(--terminal));
+  background: rgba(3, 3, 5, .54);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.project-row span:last-child {
+  justify-self: end;
+  font-weight: 700;
+  color: var(--accent, var(--terminal));
+  text-shadow: 0 0 10px color-mix(in srgb, var(--accent, var(--terminal)) 40%, transparent);
+}
+
+.project-row:hover,
+.project-row:focus-visible {
+  color: var(--accent, var(--terminal));
+  animation: glitchShift .24s steps(2, end);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent, var(--terminal)) 26%, transparent);
+}
+
+.project-row span,
+.project-row small {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.project-row small {
+  color: var(--text-dim);
+}
+
+.project-modal {
+  width: min(860px, calc(100vw - 2rem));
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.project-modal::backdrop {
+  background: rgba(3, 3, 5, .82);
+  backdrop-filter: blur(6px);
+}
+
+.project-modal[open] {
+  animation: modalSpawn .22s ease-out;
+}
+
+@keyframes modalSpawn {
+  from {
+    opacity: 0;
+    transform: translate(-2rem, -2rem) scale(.96);
+  }
+}
+
+.modal-body dl {
+  display: grid;
+  gap: .7rem;
+  margin: 1.4rem 0;
+}
+
+.modal-body dl div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(232, 232, 240, .1);
+}
+
+.modal-body dt {
+  color: var(--amber);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .8rem;
+}
+
+.modal-body dd {
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}

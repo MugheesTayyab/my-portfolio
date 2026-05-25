@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#00ff9c"/>
+      <stop offset=".55" stop-color="#9d00ff"/>
+      <stop offset="1" stop-color="#ffb830"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0v24" fill="none" stroke="#00ff9c" stroke-opacity=".15"/>
+    </pattern>
+  </defs>
+  <rect width="520" height="620" fill="#060612"/>
+  <rect width="520" height="620" fill="url(#grid)"/>
+  <path d="M150 500c10-80 45-126 110-126s100 46 110 126" fill="none" stroke="url(#g)" stroke-width="18"/>
+  <path d="M170 230c0-68 42-118 90-118s90 50 90 118c0 74-42 126-90 126s-90-52-90-126z" fill="#111122" stroke="#00ff9c" stroke-width="8"/>
+  <path d="M205 235h38M277 235h38M225 285c22 18 48 18 70 0" fill="none" stroke="#ffb830" stroke-width="8" stroke-linecap="square"/>
+  <path d="M122 164h72M332 164h66M112 420h80M328 420h80" stroke="#9d00ff" stroke-width="8"/>
+  <g fill="#00ff9c" font-family="monospace" font-size="16" opacity=".7">
+    <text x="32" y="56">SIGNAL: ONLINE</text>
+    <text x="330" y="578">FAST-CS4</text>
+    <text x="44" y="578">AI_ENGINE</text>
+  </g>
+</svg>

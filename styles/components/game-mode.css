@@ -1,0 +1,115 @@
+.game-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 3, 5, 0.95);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.game-overlay.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.game-container {
+  position: relative;
+  width: min(900px, 95vw);
+  height: min(600px, 70vh);
+  background: var(--grid);
+  border: 2px solid var(--terminal);
+  box-shadow: var(--shadow-terminal);
+  overflow: hidden;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.game-header {
+  width: min(900px, 95vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--terminal);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.game-controls-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.game-close {
+  background: transparent;
+  border: 1px solid var(--terminal);
+  color: var(--terminal);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.game-close:hover {
+  background: var(--terminal);
+  color: var(--void);
+}
+
+.game-ui-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.collectible-stat {
+  background: rgba(0, 255, 156, 0.1);
+  border: 1px solid var(--terminal);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--terminal);
+}
+
+.joystick-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.joystick-btn:hover {
+  color: var(--terminal);
+}
+
+.joystick-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .game-controls-hint {
+    display: none;
+  }
+}

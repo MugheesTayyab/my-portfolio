@@ -1,0 +1,74 @@
+.particle-universe-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--void);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.particle-universe-wrapper.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#particle-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Flash effect for click shockwave */
+.glitch-flash.shockwave {
+  background: white;
+  mix-blend-mode: overlay;
+}
+
+/* Particle Intro Overlay */
+.particle-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.particle-intro-overlay.is-done {
+  opacity: 0;
+}
+
+.particle-intro-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  color: var(--terminal);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 255, 156, 0.5);
+  opacity: 0.8;
+}
+
+.particle-intro-progress {
+  width: min(300px, 60vw);
+  height: 2px;
+  background: rgba(0, 255, 156, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.particle-intro-progress::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--terminal), var(--amber));
+  box-shadow: 0 0 10px var(--terminal);
+  transition: width 0.1s linear;
+}

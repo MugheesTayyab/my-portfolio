@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <defs>
+    <linearGradient id="heat" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#00ff9c" stop-opacity=".08"/>
+      <stop offset=".45" stop-color="#9d00ff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#ffb830" stop-opacity=".12"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <rect width="900" height="560" fill="none"/>
+  <g opacity=".55">
+    <path d="M80 420 C190 120 300 120 420 310 S680 500 820 120" fill="none" stroke="#00ff9c" stroke-width="1.5"/>
+    <path d="M70 120 C250 360 350 390 520 170 S730 160 850 430" fill="none" stroke="#ffb830" stroke-width="1.2"/>
+    <path d="M140 500 C250 420 290 260 420 210 S650 170 780 60" fill="none" stroke="#9d00ff" stroke-width="1.2"/>
+  </g>
+  <g filter="url(#soft)">
+    <circle cx="165" cy="160" r="74" fill="url(#heat)"/>
+    <circle cx="420" cy="270" r="112" fill="url(#heat)"/>
+    <circle cx="702" cy="370" r="90" fill="url(#heat)"/>
+  </g>
+  <g fill="none" stroke="#00ff9c" stroke-opacity=".18">
+    <path d="M0 80H900M0 160H900M0 240H900M0 320H900M0 400H900M0 480H900"/>
+    <path d="M100 0V560M200 0V560M300 0V560M400 0V560M500 0V560M600 0V560M700 0V560M800 0V560"/>
+  </g>
+  <g fill="#e8e8f0" opacity=".42">
+    <circle cx="165" cy="160" r="3"/>
+    <circle cx="420" cy="270" r="3"/>
+    <circle cx="702" cy="370" r="3"/>
+    <circle cx="310" cy="210" r="2"/>
+    <circle cx="560" cy="180" r="2"/>
+    <circle cx="750" cy="120" r="2"/>
+  </g>
+</svg>

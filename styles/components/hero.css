@@ -1,0 +1,91 @@
+.hero-panel {
+  align-items: center;
+  justify-content: center;
+}
+
+.attention-map {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(80vw, 1000px);
+  opacity: .4;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.hero-terminal {
+  width: min(1000px, 100%);
+  align-self: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 4.5rem);
+}
+
+.system-line {
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+}
+
+.ascii-name {
+  max-width: 100%;
+  margin: 1.4rem 0 1.2rem;
+  color: var(--terminal);
+  font-family: "Fragment Mono", "JetBrains Mono", monospace;
+  font-size: clamp(.35rem, 1vw, .9rem);
+  line-height: 1.08;
+  white-space: pre;
+  text-shadow: 0 0 18px rgba(0, 255, 156, .34);
+}
+
+.hero-subtitle {
+  min-height: 2rem;
+  margin: 0 0 2rem;
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-stat {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3rem);
+  bottom: clamp(1rem, 4vw, 3rem);
+  display: grid;
+  text-align: right;
+  color: var(--amber);
+  opacity: 0.8;
+}
+
+.hero-stat strong {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.8rem, 8vw, 8rem);
+  line-height: .8;
+  text-shadow: 0 0 30px rgba(255, 184, 48, .32);
+}
+
+.hero-stat span {
+  color: var(--text-dim);
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+}
+
+@media (max-height: 780px) {
+  .hero-stat {
+    position: static;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+}

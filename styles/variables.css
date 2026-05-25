@@ -1,0 +1,18 @@
+:root {
+  --void: #030305;
+  --terminal: #00ff9c;
+  --amber: #ffb830;
+  --error-red: #ff2d55;
+  --ghost: #1a1a2e;
+  --grid: #0d0d1a;
+  --text-primary: #e8e8f0;
+  --text-dim: #8b8baa;
+  --neon-purple: #9d00ff;
+  --cyan: #00c8ff;
+  --panel-pad: clamp(1.2rem, 4vw, 4rem);
+  --topbar-h: 64px;
+  --ticker-h: 28px;
+  --line: rgba(0, 255, 156, .22);
+  --shadow-terminal: 0 0 28px rgba(0, 255, 156, .18), inset 0 0 32px rgba(0, 255, 156, .05);
+  --radius: 8px;
+}

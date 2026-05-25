@@ -1,0 +1,94 @@
+.skill-layout {
+  display: grid;
+  grid-template-columns: minmax(420px, 1.35fr) minmax(280px, .65fr);
+  gap: 1.2rem;
+  width: min(1120px, 100%);
+}
+
+.skill-map {
+  position: relative;
+  min-height: 520px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(26, 26, 46, .46);
+  overflow: hidden;
+}
+
+.skill-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.skill-lines path {
+  fill: none;
+  stroke: rgba(0, 255, 156, .32);
+  stroke-width: 2;
+  stroke-dasharray: 8 12;
+  animation: lineFlow 9s linear infinite;
+}
+
+@keyframes lineFlow {
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+
+.skill-node {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid var(--color);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color) 12%, var(--void));
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .76rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--color) 34%, transparent);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.skill-node:hover,
+.skill-node:focus-visible {
+  z-index: 3;
+  transform: translate(-50%, -50%) scale(1.18);
+  background: var(--void);
+}
+
+.skill-node .skill-tip {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + .6rem);
+  width: 220px;
+  padding: .7rem;
+  border: 1px solid var(--color);
+  border-radius: 4px;
+  background: rgba(3, 3, 5, .95);
+  color: var(--text-primary);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.skill-node:hover .skill-tip,
+.skill-node:focus-visible .skill-tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.skills-code {
+  min-height: 100%;
+  margin: 0;
+  padding: 1.2rem;
+  border-left: 3px solid var(--terminal);
+  border-radius: var(--radius);
+  background: rgba(26, 26, 46, .72);
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
