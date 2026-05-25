@@ -1,5 +1,6 @@
 # 🧠 MUGHEES_OS v2026.04 — Neural Terminal Portfolio
 
+[![Live System](https://img.shields.io/badge/Live-MUGHEES__OS-00ffff?style=for-the-badge&logo=vercel&logoColor=white)](https://mughees-portfolio-liart.vercel.app/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -18,6 +19,8 @@
 ```
 
 > **A retro-futuristic hacker-style operating system built entirely with vanilla web technologies, Three.js, and custom low-level algorithms. Designed to showcase AI system engineering, mathematical modeling, and hardware-level design.**
+
+🌌 **[Access the Live Terminal Portal 🚀](https://mughees-portfolio-liart.vercel.app/)**
 
 ---
 
